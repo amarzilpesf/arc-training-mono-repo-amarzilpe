@@ -8,6 +8,13 @@ It will create EC2 machines in every `AZ` available in a region.
 |-----------|----|-----|
 | us-east-1 | 6  | 6   |
 
+> [!NOTE]  
+> Some instance type may not be available in specified region.
+> To list `instance type` available in `region`
+```
+aws ec2 describe-instance-type-offerings \
+    --region us-east-1
+```
 
 ## Usage
 ```
