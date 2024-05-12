@@ -4,9 +4,10 @@ This module usage data source for getting `AWS Availabilty zones` within an `reg
 It will create EC2 machines in every `AZ` available in a region.
 
 ## Example
-|Reagion|us-east-1|
-|AZ in us-east-1|6|
-|Ec2 machines|6| 
+| Region    | AZ | Ec2 |
+|-----------|----|-----|
+| us-east-1 | 6  | 6   |
+
 
 ## Usage
 ```
