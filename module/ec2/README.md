@@ -24,6 +24,7 @@ aws ec2 describe-instance-type-offerings \
 ```
 module "ec2" {
   source = "path/to/ec2/module"
+  instance_type = var.instance_type
 
 }
 ```
