@@ -3,9 +3,6 @@
 This module usage data source for getting `AWS Availabilty zones` within an `region`.
 It will create EC2 machines in every `AZ` available in a region.
 
-> [!NOTE]  
-> This Module usage `Ubuntu AMI` to create EC2 Linux compute.
-
 ## Example
 | Region    | AZ | Ec2 |
 |-----------|----|-----|
@@ -18,6 +15,10 @@ It will create EC2 machines in every `AZ` available in a region.
 aws ec2 describe-instance-type-offerings \
     --region us-east-1
 ```
+
+# AMI
+> [!NOTE]  
+> This Module usage `Ubuntu AMI` to create EC2 Linux compute.
 
 ## Usage
 ```
