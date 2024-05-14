@@ -3,10 +3,6 @@ output "vpc_id" {
   description = "VPC id"
 }
 
-# output "public_subnet_id_01" {
-#   value = aws_subnet.public_subnet[0].id
-# }
-
 output "pub_subnet_id" {
   value = aws_subnet.public_subnet[*].id
 }
