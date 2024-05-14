@@ -37,6 +37,5 @@ variable "username" {
 variable "password" {
   description = "Master RDS password"
   type        = string
-  default     = "RA2c_489"
   sensitive   = true
 }

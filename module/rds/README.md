@@ -10,7 +10,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.30 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.49.0 |
 
 ## Modules
 
@@ -31,7 +31,7 @@ No modules.
 | <a name="input_engine_version"></a> [engine\_version](#input\_engine\_version) | Choose appropriate engine version | `list(string)` | <pre>[<br>  "16.1",<br>  "8.0",<br>  "10.11"<br>]</pre> | no |
 | <a name="input_instance_class"></a> [instance\_class](#input\_instance\_class) | RDS instance class | `string` | `"db.t3.micro"` | no |
 | <a name="input_max_allocated_storage"></a> [max\_allocated\_storage](#input\_max\_allocated\_storage) | Auto scaling max allocation storage | `number` | `100` | no |
-| <a name="input_password"></a> [password](#input\_password) | Master RDS password | `string` | `"RA2c_489"` | no |
+| <a name="input_password"></a> [password](#input\_password) | Master RDS password | `string` | n/a | yes |
 | <a name="input_username"></a> [username](#input\_username) | Master RDS username | `list(string)` | <pre>[<br>  "postgres",<br>  "mysql",<br>  "mariadb"<br>]</pre> | no |
 
 ## Outputs
