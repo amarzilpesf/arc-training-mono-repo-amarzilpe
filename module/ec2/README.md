@@ -18,7 +18,7 @@ aws ec2 describe-instance-type-offerings \
 
 # AMI
 > [!NOTE]  
-> This Module usage `Ubuntu AMI` to create EC2 Linux compute.
+> This Module usage `Ubuntu AMI` to create EC2 Linux.
 
 ## Usage
 ```
