@@ -12,9 +12,14 @@
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | 5.49.0 |
 
-## Modules
+## Modules Usage
+```
+module "vpc" {
+    source = "/path/to/module"
+}
+```
 
-No modules.
+
 
 ## Resources
 
