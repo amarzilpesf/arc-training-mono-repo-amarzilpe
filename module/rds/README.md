@@ -13,8 +13,23 @@
 | <a name="provider_aws"></a> [aws](#provider\_aws) | 5.49.0 |
 
 ## Modules
+```
+module "rds" {
+  source = "/path/to/module/rds"
+  password = var.password
+}
+```
 
-No modules.
+> [!NOTE]
+>This module by default creates `postgres` engine RDS database.
+>Available RDS engine postgres, mysql, mariadb.  
+
+```
+locals {
+  engine         = var.engine[0]            # index value
+  engine_version = var.engine_version[0]    # index value
+}
+```
 
 ## Resources
 
