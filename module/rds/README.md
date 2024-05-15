@@ -3,39 +3,28 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.30 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.30 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | 3.6.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | 5.49.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | 3.6.1 |
 
 ## Modules
-```
-module "rds" {
-  source = "/path/to/module/rds"
-  password = var.password
-}
-```
 
-> [!NOTE]
->This module by default creates `postgres` engine RDS database.
->Available RDS engine postgres, mysql, mariadb.  
-
-```
-locals {
-  engine         = var.engine[0]            # index value
-  engine_version = var.engine_version[0]    # index value
-}
-```
+No modules.
 
 ## Resources
 
 | Name | Type |
 |------|------|
 | [aws_db_instance.rds_instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance) | resource |
+| [aws_ssm_parameter.password_param](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter) | resource |
+| [random_password.password](https://registry.terraform.io/providers/hashicorp/random/3.6.1/docs/resources/password) | resource |
 
 ## Inputs
 
@@ -46,7 +35,6 @@ locals {
 | <a name="input_engine_version"></a> [engine\_version](#input\_engine\_version) | Choose appropriate engine version | `list(string)` | <pre>[<br>  "16.1",<br>  "8.0",<br>  "10.11"<br>]</pre> | no |
 | <a name="input_instance_class"></a> [instance\_class](#input\_instance\_class) | RDS instance class | `string` | `"db.t3.micro"` | no |
 | <a name="input_max_allocated_storage"></a> [max\_allocated\_storage](#input\_max\_allocated\_storage) | Auto scaling max allocation storage | `number` | `100` | no |
-| <a name="input_password"></a> [password](#input\_password) | Master RDS password | `string` | n/a | yes |
 | <a name="input_username"></a> [username](#input\_username) | Master RDS username | `list(string)` | <pre>[<br>  "postgres",<br>  "mysql",<br>  "mariadb"<br>]</pre> | no |
 
 ## Outputs

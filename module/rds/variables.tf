@@ -33,9 +33,3 @@ variable "username" {
   type        = list(string)
   default     = ["postgres", "mysql", "mariadb"]
 }
-
-variable "password" {
-  description = "Master RDS password"
-  type        = string
-  sensitive   = true
-}
