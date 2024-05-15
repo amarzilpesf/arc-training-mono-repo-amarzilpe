@@ -29,11 +29,18 @@ data "aws_availability_zones" "azs" {
   }
 }
 
+resource "aws_key_pair" "ssh_key" {
+  key_name   = "my-key"
+  public_key = file("/home/amar.zilpe/Documents/learning_platform/Udemy/ssh_key/ssh_key.pub")
+}
+
+
 resource "aws_instance" "web" {
   ami               = data.aws_ami.ubuntu.id
   instance_type     = var.instance_type
   for_each          = toset(data.aws_availability_zones.azs.names)
   availability_zone = each.key
+  key_name          = aws_key_pair.ssh_key.key_name
 
   tags = {
     Name = "web-${each.value}"
