@@ -1,50 +1,18 @@
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-# EC2 Terraform module
-This module usage data source for getting `AWS Availabilty zones` within an `region`.
-It will create EC2 machines in every `AZ` available in a region.
-
-## Example
-| Region    | AZ | Ec2 |
-|-----------|----|-----|
-| us-east-1 | 6  | 6   |
-
-> [!NOTE]  
-> Some instance type may not be available in specified region.
-> To list `instance type` available in `region`
-```
-aws ec2 describe-instance-type-offerings \
-    --region us-east-1
-```
-
-# AMI
-> [!NOTE]  
-> This Module usage `Ubuntu AMI` to create EC2 Linux.
-
-# SSH Key
-> [!NOTE]
-> Make sure to change `SSH Key` location.
-
-## Usage
-```
-module "ec2" {
-  source = "path/to/ec2/module"
-  instance_type = var.instance_type
-
-}
-```
-
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.30 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.30 |
+| <a name="requirement_tls"></a> [tls](#requirement\_tls) | 4.0.5 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | 5.49.0 |
+| <a name="provider_tls"></a> [tls](#provider\_tls) | 4.0.5 |
 
 ## Modules
 
@@ -55,6 +23,9 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_instance.web](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
+| [aws_key_pair.generated_key](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair) | resource |
+| [aws_security_group.sg](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
+| [tls_private_key.ssh_key_generate](https://registry.terraform.io/providers/hashicorp/tls/4.0.5/docs/resources/private_key) | resource |
 | [aws_ami.ubuntu](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami) | data source |
 | [aws_availability_zones.azs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones) | data source |
 
@@ -62,7 +33,15 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Choose instance type | `string` | `"t2.micro"` | no |
+| <a name="input_delete_on_termination"></a> [delete\_on\_termination](#input\_delete\_on\_termination) | n/a | `bool` | `true` | no |
+| <a name="input_egress_rules"></a> [egress\_rules](#input\_egress\_rules) | A map of egress rules | <pre>map(object({<br>    from_port   = number<br>    to_port     = number<br>    protocol    = string<br>    cidr_blocks = list(string)<br>  }))</pre> | <pre>{<br>  "all_traffic": {<br>    "cidr_blocks": [<br>      "0.0.0.0/0"<br>    ],<br>    "from_port": 0,<br>    "protocol": "-1",<br>    "to_port": 0<br>  }<br>}</pre> | no |
+| <a name="input_encrypted"></a> [encrypted](#input\_encrypted) | n/a | `bool` | `true` | no |
+| <a name="input_ingress_rules"></a> [ingress\_rules](#input\_ingress\_rules) | A map of ingress rules | <pre>map(object({<br>    from_port   = number<br>    to_port     = number<br>    protocol    = string<br>    cidr_blocks = list(string)<br>  }))</pre> | <pre>{<br>  "ssh": {<br>    "cidr_blocks": [<br>      "0.0.0.0/0"<br>    ],<br>    "from_port": 22,<br>    "protocol": "tcp",<br>    "to_port": 22<br>  }<br>}</pre> | no |
+| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Choose instance type | `string` | `"t3.medium"` | no |
+| <a name="input_path"></a> [path](#input\_path) | n/a | `string` | `"~/Documents/"` | no |
+| <a name="input_ssh_key"></a> [ssh\_key](#input\_ssh\_key) | n/a | `string` | `null` | no |
+| <a name="input_volume_size"></a> [volume\_size](#input\_volume\_size) | n/a | `number` | `8` | no |
+| <a name="input_volume_type"></a> [volume\_type](#input\_volume\_type) | n/a | `string` | `"gp3"` | no |
 
 ## Outputs
 
