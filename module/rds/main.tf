@@ -10,7 +10,7 @@ resource "random_password" "password" {
 }
 
 resource "aws_ssm_parameter" "password_param" {
-  name  = "himanshu-rds-password"
+  name  = "rds-password"
   type  = "SecureString"
   value = random_password.password.result
 }
