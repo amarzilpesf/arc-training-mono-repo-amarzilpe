@@ -12,14 +12,9 @@
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | 5.49.0 |
 
-## Modules Usage
-```
-module "ec2" {
-  source = "path/to/ec2/module"
+## Modules
 
-}
-```
-
+No modules.
 
 ## Resources
 
