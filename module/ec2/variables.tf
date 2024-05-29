@@ -4,6 +4,11 @@ variable "instance_type" {
   default     = "t3.medium"
 }
 
+variable "subnet_id" {
+  type    = string
+  default = ""
+}
+
 variable "ssh_key" {
   type    = string
   default = null
@@ -11,7 +16,7 @@ variable "ssh_key" {
 
 variable "path" {
   type    = string
-  default = "~/Documents/"
+  default = "~/Documents"
 }
 
 variable "volume_type" {

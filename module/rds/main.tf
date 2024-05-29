@@ -23,6 +23,7 @@ resource "aws_db_instance" "rds_instance" {
   engine                = local.engine
   engine_version        = local.engine_version
   instance_class        = var.instance_class
+  db_subnet_group_name  = var.db_subnet_group_name
   db_name               = "mydatabase"
   username              = var.username[0]
   password              = aws_ssm_parameter.password_param.value

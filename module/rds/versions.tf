@@ -13,5 +13,3 @@ terraform {
     }
   }
 }
-
-provider "random" {}

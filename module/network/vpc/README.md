@@ -31,6 +31,7 @@ No modules.
 | [aws_subnet.private_subnet](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_subnet.public_subnet](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_vpc.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc) | resource |
+| [aws_availability_zones.available](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones) | data source |
 
 ## Inputs
 
@@ -45,6 +46,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_nat_gateway_id"></a> [nat\_gateway\_id](#output\_nat\_gateway\_id) | n/a |
 | <a name="output_pub_subnet_id"></a> [pub\_subnet\_id](#output\_pub\_subnet\_id) | n/a |
 | <a name="output_pvt_subnet_id"></a> [pvt\_subnet\_id](#output\_pvt\_subnet\_id) | n/a |
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | VPC id |
