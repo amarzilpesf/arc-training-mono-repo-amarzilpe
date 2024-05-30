@@ -10,3 +10,7 @@ output "pub_subnet_id" {
 output "pvt_subnet_id" {
   value = aws_subnet.private_subnet[*].id
 }
+
+output "nat_gateway_id" {
+  value = aws_eip.nat_gtw_eip.id
+}

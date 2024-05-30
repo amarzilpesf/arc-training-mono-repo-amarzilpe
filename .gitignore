@@ -34,3 +34,8 @@ override.tf.json
 
 .idea
 /skeleton/terraform/network/secrets/
+
+# SSH Key
+*.pem
+*.key
+rsa

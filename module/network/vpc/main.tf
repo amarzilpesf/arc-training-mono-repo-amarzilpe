@@ -23,11 +23,20 @@ resource "aws_subnet" "public_subnet" {
   }
 }
 
+data "aws_availability_zones" "available" {
+  state = "available"
+}
+
+locals {
+  azs = slice(data.aws_availability_zones.available.names, 0, 2) # Select only the first two AZs
+}
+
 # Creating Private Subnet
 resource "aws_subnet" "private_subnet" {
-  count                   = length(var.private_subnet_cidr)
+  count                   = 2
   vpc_id                  = aws_vpc.main.id
   cidr_block              = element(var.private_subnet_cidr, count.index)
+  availability_zone       = local.azs[count.index]
   map_public_ip_on_launch = false
 
   tags = {

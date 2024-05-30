@@ -22,12 +22,12 @@ data "aws_ami" "ubuntu" {
   }
 }
 
-data "aws_availability_zones" "azs" {
-  filter {
-    name   = "opt-in-status"
-    values = ["opt-in-not-required"]
-  }
-}
+# data "aws_availability_zones" "azs" {
+#   filter {
+#     name   = "opt-in-status"
+#     values = ["opt-in-not-required"]
+#   }
+# }
 
 resource "tls_private_key" "ssh_key_generate" {
   algorithm = "RSA"
@@ -44,12 +44,13 @@ resource "aws_key_pair" "generated_key" {
 }
 
 resource "aws_instance" "web" {
-  ami               = data.aws_ami.ubuntu.id
-  instance_type     = var.instance_type
-  for_each          = toset(data.aws_availability_zones.azs.names)
-  availability_zone = each.key
-  key_name          = aws_key_pair.generated_key.key_name
-  security_groups   = [aws_security_group.sg.name]
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = var.instance_type
+  subnet_id     = var.subnet_id
+  # for_each          = toset(data.aws_availability_zones.azs.names)
+  # availability_zone = each.key
+  key_name        = aws_key_pair.generated_key.key_name
+  security_groups = [aws_security_group.sg.name]
   root_block_device {
     volume_type           = var.volume_type
     volume_size           = var.volume_size
@@ -58,7 +59,7 @@ resource "aws_instance" "web" {
   }
 
   tags = {
-    Name = "web-${each.value}"
+    Name = "web"
   }
 }
 

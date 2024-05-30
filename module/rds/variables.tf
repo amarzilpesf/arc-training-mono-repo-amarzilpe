@@ -33,3 +33,7 @@ variable "username" {
   type        = list(string)
   default     = ["postgres", "mysql", "mariadb"]
 }
+
+variable "db_subnet_group_name" {
+  type = string
+}

@@ -31,6 +31,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_allocated_storage"></a> [allocated\_storage](#input\_allocated\_storage) | Allocate Storage value | `number` | `20` | no |
+| <a name="input_db_subnet_group_name"></a> [db\_subnet\_group\_name](#input\_db\_subnet\_group\_name) | n/a | `string` | n/a | yes |
 | <a name="input_engine"></a> [engine](#input\_engine) | Set the engine for rds instance | `list(string)` | <pre>[<br>  "postgres",<br>  "mysql",<br>  "mariadb"<br>]</pre> | no |
 | <a name="input_engine_version"></a> [engine\_version](#input\_engine\_version) | Choose appropriate engine version | `list(string)` | <pre>[<br>  "16.1",<br>  "8.0",<br>  "10.11"<br>]</pre> | no |
 | <a name="input_instance_class"></a> [instance\_class](#input\_instance\_class) | RDS instance class | `string` | `"db.t3.micro"` | no |
