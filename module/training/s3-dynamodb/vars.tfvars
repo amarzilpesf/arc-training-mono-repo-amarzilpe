@@ -1,0 +1,5 @@
+project_name  = "ARC-IAC-Training"
+bucket_name   = "amar-arc-training-sf"
+dynamodb_name = "arc-training-sf"
+region        = "ap-south-1"
+environment   = "dev"
