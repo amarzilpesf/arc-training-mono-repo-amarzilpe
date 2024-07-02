@@ -1,4 +1,4 @@
-# Reference Architecture DevOps Infrastructure: [Bootstrap](https://sourcefuse.github.io/arc-docs/arc-iac-docs/modules/terraform-module-aws-bootstrap/) 
+# Reference Architecture DevOps Infrastructure: [Bootstrap](https://sourcefuse.github.io/arc-docs/arc-iac-docs/modules/terraform-module-aws-bootstrap/)
 
 ## Overview
 
@@ -70,7 +70,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_bootstrap"></a> [bootstrap](#module\_bootstrap) | sourcefuse/arc-bootstrap/aws | 1.0.9 |
+| <a name="module_bootstrap"></a> [bootstrap](#module\_bootstrap) | sourcefuse/arc-bootstrap/aws | 1.1.3 |
 | <a name="module_terraform-aws-arc-tags"></a> [terraform-aws-arc-tags](#module\_terraform-aws-arc-tags) | sourcefuse/arc-tags/aws | 1.2.5 |
 
 ## Resources
