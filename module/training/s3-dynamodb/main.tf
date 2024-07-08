@@ -12,7 +12,12 @@ terraform {
 }
 
 provider "aws" {
+  region = var.region
+}
 
+provider "aws" {
+  region = var.region
+  alias  = "backend_state"
 }
 
 module "bootstrap" {

@@ -15,11 +15,11 @@ variable "bucket_name" {
   type        = string
 }
 
-# variable "region" {
-#   description = "AWS Region"
-#   default     = "ap-south-1"
-#   type        = string
-# }
+variable "region" {
+  description = "AWS Region"
+  default     = "ap-south-1"
+  type        = string
+}
 
 # variable "environment" {
 #   type        = string

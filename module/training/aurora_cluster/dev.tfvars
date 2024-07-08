@@ -1,0 +1,7 @@
+environment  = "poc"
+namespace    = "arc"
+name         = "training"
+region       = "ap-south-1"
+project_name = "arc-training-amar"
+db_type      = "aurora"
+bucket_name  = "tf-arc-iac-dev"
