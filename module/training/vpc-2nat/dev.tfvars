@@ -1,0 +1,9 @@
+project_name                = "arc-iac-amar"
+namespace                   = "arc-demo"
+region                      = "ap-south-1"
+environment                 = "Dev"
+availability_zones          = ["ap-south-1a", "ap-south-1b"]
+vpc_cidr_bloc               = "10.0.0.0/16"
+generate_ssh_key            = true
+ssh_key_path                = "./secrets"
+vpc_ipv4_primary_cidr_block = "10.0.0.0/16"
