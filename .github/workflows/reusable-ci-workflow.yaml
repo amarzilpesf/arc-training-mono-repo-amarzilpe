@@ -53,7 +53,7 @@ jobs:
           role-to-assume: "arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.ASSUME_ROLE_NAME }}"
           aws-region: ${{ inputs.aws_region }}
 
-      # initialize backend
+      # initialize backend.
       - name: Initialize terraform backend
         run: |
           terraform -v
