@@ -11,7 +11,9 @@ terraform {
     }
   }
 
-  backend "s3" {}
+  backend "s3" {
+    # region = "us-east-1"
+  }
 }
 
 module "terraform-aws-arc-tags" {
