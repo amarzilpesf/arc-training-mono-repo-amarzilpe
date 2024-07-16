@@ -1,4 +1,4 @@
-region                            = "ap-south-1"
+region                            = "us-east-1"
 environment                       = "dev"
 namespace                         = "arc"
 route_53_zone                     = "sfarcpoc.com"

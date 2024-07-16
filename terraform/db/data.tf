@@ -1,13 +1,8 @@
-################################################################################
-## imports
-################################################################################
-data "aws_caller_identity" "this" {}
-
 ## network
 data "aws_vpc" "vpc" {
   filter {
     name   = "tag:Name"
-    values = ["${var.namespace}-${var.environment}-vpc"]
+    values = ["arc-poc-vpc"]
   }
 }
 
@@ -16,8 +11,8 @@ data "aws_subnets" "private" {
     name = "tag:Name"
 
     values = [
-      "${var.namespace}-${terraform.workspace}-private-${var.region}a",
-      "${var.namespace}-${terraform.workspace}-private-${var.region}b",
+      "arc-demo-Dev-private-subnet-private-ap-south-1a",
+      "arc-demo-Dev-private-subnet-private-ap-south-1b",
     ]
   }
 }
