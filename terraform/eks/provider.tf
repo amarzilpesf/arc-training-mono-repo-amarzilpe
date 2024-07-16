@@ -23,8 +23,6 @@ terraform {
       version = "2.14.0"
     }
   }
-  backend "s3" {
-  }
 }
 
 provider "kubernetes" {
