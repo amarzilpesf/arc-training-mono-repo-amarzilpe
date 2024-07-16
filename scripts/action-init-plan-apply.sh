@@ -65,12 +65,12 @@ help () {
 }
 
 check_dir() {
- ! [ -d "terraform/$DIRECTORY" ]
+ ! [ -d "module/training/$DIRECTORY" ]
 }
 
 init () {
   aws sts get-caller-identity
-  cd terraform/$DIRECTORY
+  cd module/training/$DIRECTORY
   case $ENV in
   "dev")
     terraform init -backend-config config.dev.hcl $EXTRA_ARGS
@@ -91,7 +91,7 @@ esac
 
 plan () {
 
-  cd terraform/$DIRECTORY
+  cd module/training/$DIRECTORY
   PLAN_FILENAME=$ENV-$(basename $DIRECTORY)-$plan_id.tfplan
   terraform plan -var-file=$ENV.tfvars $EXTRA_ARGS -out $PLAN_FILENAME
   PLAN_OUTPUT=$(terraform show -no-color $PLAN_FILENAME)
@@ -108,7 +108,7 @@ plan () {
 
 apply () {
 
-  cd terraform/$DIRECTORY
+  cd module/training/$DIRECTORY
   terraform apply -auto-approve $EXTRA_ARGS $ENV-$DIRECTORY-$plan_id.tfplan
 
 }
