@@ -6,7 +6,7 @@ on:  # yamllint disable-line rule:truthy
     branches:
       - main
     paths:
-      - 'terraform/network/*'
+      - 'modules/training/network/*'
       - '.github/workflows/plan-network.yaml'
       - '.github/workflows/reusable-ci-workflow.yaml'
   workflow_dispatch:
