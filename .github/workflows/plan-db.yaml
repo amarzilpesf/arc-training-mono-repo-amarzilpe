@@ -6,7 +6,7 @@ on:  # yamllint disable-line rule:truthy
     branches:
       - main
     paths:
-      - 'module/training/rds/*'
+      - 'module/rds/*'
       - '.github/workflows/plan-db.yaml'
       - '.github/workflows/reusable-ci-workflow.yaml'
   workflow_dispatch:
