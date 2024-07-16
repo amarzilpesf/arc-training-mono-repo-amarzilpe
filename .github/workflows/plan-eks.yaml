@@ -6,7 +6,7 @@ on:  # yamllint disable-line rule:truthy
     branches:
       - main
     paths:
-      - 'modules/training/eks/*'
+      - 'module/training/eks/*'
       - '.github/workflows/plan-eks.yaml'
       - '.github/workflows/reusable-ci-workflow.yaml'
   workflow_dispatch:
