@@ -11,7 +11,7 @@ terraform {
     }
   }
 
-  #backend "s3" {}
+  backend "s3" {}
 }
 
 module "terraform-aws-arc-tags" {
@@ -56,7 +56,7 @@ module "aurora" {
   aurora_allowed_cidr_blocks         = [data.aws_vpc.vpc.cidr_block]
 
   aurora_serverlessv2_scaling_configuration = {
-    max_capacity = 16
+    max_capacity = 15
     min_capacity = 2
   }
   tags = merge(
